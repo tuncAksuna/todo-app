@@ -1,52 +1,86 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" >
-    <link rel="stylesheet" href="style.css">
-    <title>My task list </title>
-  </head>
-  <body>
-      <div class="container p-3">
-          <h1 class="app-title " id ="header"> ToDo app</h1>
-          <div class="card">
-              <div class="card-header">
-                  New Task
-              </div>
-          <div class="card-body">
-              <form id="addTaskForm">
-                  <div class="input-group mt-3" >
-                  <input type="text" id="txtTaskName" class="form-control" placeholder="Type a new task">
-                  <div class="input-group-append">
-                      <button class="btn btn-primary" type="submit" id="btnAddNewTask">
-                          <i class="fas fa-plus"></i>
-                      </button>
-                  </div>
-                </div>
-              </form>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Task List</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container p-3">
+    <h1 class="app-title" id="header">To Do App</h1>
+    <div class="card">
+      <div class="card-header">
+        new Task
+      </div>
+
+      <div class="card-body">
+        <form id="addTaskForm">
+          <div class="input-group mt-3">
+            <input type="text" id="txtTaskName" class="form-control" placeholder="Type a new Task">
+            <div class="input-group-append">
+              <button class="btn btn-primary" type="button" onclick="addNewItem()"><i class="fas fa-plus"></i></button>
             </div>
-        </div>
-        
-        <div class="card mt-3"></div>
-        <div class="card-header">
-            Task LIST
-            <a id =btnDeleteAll href="#" class="btn btn-outline-danger btn-sm 
-            delete-all float-right">Delete All Tasks</a>
-        </div>
-
-        <ul id="task-list" class="list-group">
-        </ul>
-
+          </div>
+        </form>
       </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <script src="script.js"></script>
 
-  </body>
+    <!-- BEKLEYENLER -->
+    <div class="card mt-3">
+      <div class="card-header"><strong>Bekleyenler</strong></div>
+      <ul id="task-list1" class="list-group">
+        <li class="list-group-item list-group-item-secondary">Görev
+          <button id="btnWarning" class="btn btn-outline-warning btn-sm delete-all float-right">Beklemeye al</button>
+          <a href="#" class="delete-item float-right mr-2 p-1">
+            <i class="fas fa-times"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- BEKLEYENLER -->
+
+    <!--YAPILIYOR-->
+    <div class="card mt-3">
+      <div class="card-header"><strong>Yapılıyor</strong></div>
+      <ul id="task-list2" class="list-group">
+        <li class="list-group-item list-group-item-secondary">Görev
+          <a href="#" id="btnInfo" class="btn btn-outline-warning btn-sm delete-all float-right">Yapıldı</a>
+          <a href="#" class="delete-item float-right mr-2 p-1">
+            <i class="fas fa-times"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!--YAPILIYOR-->
+
+    <!--TAMAMLANDI-->
+    <div class="card mt-3">
+      <div class="card-header"><strong>Tamamlandı</strong></div>
+      <ul id="task-list3" class="list-group">
+        <li class="list-group-item list-group-item-secondary">Görev
+          <a href="#" id="btnSuccess" class="btn btn-outline-warning btn-sm delete-all float-right">Görevi sonlandır</a>
+          <a href="#" class="delete-item float-right mr-2 p-1">
+            <i class="fas fa-times"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!--TAMAMLANDI-->
+  </div>
+
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
 </html>
